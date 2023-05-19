@@ -6,7 +6,7 @@
         "subCategory": "RoboPets",
         "price": 24.99,
         "quantity": 10,
-        "pictureUrl": "https://example.com/robodog.jpg",
+        "pictureUrl": "https://www.exhobby.com/cdn/shop/products/RobotDog_pink_master_1_076e5358-7fe9-4afb-8fe9-0a27b0d78e07.jpg?v=1670572819",
         "rating": 4.5,
         "description": "The RoboDog is a loyal and interactive robotic pet companion. It can perform tricks, respond to voice commands, and even wag its tail. Perfect for kids and dog lovers alike!"
       },
@@ -16,7 +16,7 @@
         "subCategory": "RoboRacers",
         "price": 19.99,
         "quantity": 15,
-        "pictureUrl": "https://example.com/robocar.jpg",
+        "pictureUrl": "https://i5.walmartimages.com/asr/5ce99fb0-4d02-404e-ae57-6dfbb877b86e.cea5f84a859ab1bc75e528742fd5de44.jpeg",
         "rating": 4.0,
         "description": "Get ready for high-speed racing action with the RoboCar! This sleek and fast remote-controlled car can perform amazing stunts and conquer any race track."
       },
@@ -26,7 +26,7 @@
         "subCategory": "RoboWizards",
         "price": 34.99,
         "quantity": 5,
-        "pictureUrl": "https://example.com/robowizard.jpg",
+        "pictureUrl": "https://i.redd.it/qx69qcp853g61.jpg",
         "rating": 4.8,
         "description": "Become a master of magic with the RoboWizard Apprentice! This robotic wizard can cast spells, perform enchantments, and teach you the secrets of the mystical arts."
       },
@@ -36,7 +36,7 @@
         "subCategory": "RoboSidekicks",
         "price": 29.99,
         "quantity": 8,
-        "pictureUrl": "https://example.com/robocompanion.jpg",
+        "pictureUrl": "https://m.media-amazon.com/images/I/51DBd7O6GEL._AC_SY450_.jpg",
         "rating": 4.2,
         "description": "The RoboCompanion is your ultimate robotic sidekick. With its friendly personality and helpful features, it will assist you in your daily tasks and keep you entertained."
       },
@@ -46,7 +46,7 @@
         "subCategory": "RoboPets",
         "price": 21.99,
         "quantity": 12,
-        "pictureUrl": "https://example.com/robocat.jpg",
+        "pictureUrl": "https://img.freepik.com/premium-photo/white-background-accentuates-design-robot-cat_724548-5074.jpg?w=2000",
         "rating": 4.6,
         "description": "The RoboCat is a robotic feline friend that purrs, plays, and responds to your touch. It's the perfect pet for those who want the joy of having a cat without the responsibilities."
       },
@@ -56,7 +56,7 @@
         "subCategory": "RoboRacers",
         "price": 39.99,
         "quantity": 3,
-        "pictureUrl": "https://example.com/robomotorcycle.jpg",
+        "pictureUrl": "https://rukminim1.flixcart.com/image/416/416/joq2qa80/remote-control-toy/x/4/n/1-14-mz-ducati-remote-control-deformation-motorcycle-c-toy-car-original-imafazppz7z2r4be.jpeg?q=70",
         "rating": 4.3,
         "description": "Rev up the excitement with the RoboMotorcycle! This remote-controlled motorcycle can perform daring stunts, race at high speeds, and leave your competitors in the dust."
       },
@@ -66,7 +66,7 @@
         "subCategory": "RoboWizards",
         "price": 49.99,
         "quantity": 2,
-        "pictureUrl": "https://example.com/robomagician.jpg",
+        "pictureUrl": "https://thumbs.dreamstime.com/z/vintage-robot-showing-tricks-magic-hat-d-illustration-isolated-contains-clipping-path-100140290.jpg",
         "rating": 4.9,
         "description": "Prepare to be amazed by the RoboMagician! With its repertoire of mind-bending tricks and illusions, this robotic magician will leave you spellbound and wanting more."
       }

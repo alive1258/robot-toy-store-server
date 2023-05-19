@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const { MongoClient, ServerApiVersion } = require("mongodb");
+const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 require("dotenv").config();
 const port = process.env.PORT || 5000;
 
@@ -26,6 +26,7 @@ async function run() {
     await client.connect();
 
     const productCollection = client.db("robotToy").collection("products");
+    const addToyCollection = client.db("robotToy").collection("addToys");
 
     // all toy data load
     app.get("/products", async (req, res) => {
@@ -38,7 +39,27 @@ async function run() {
     app.get("/products/:id", async (req, res) => {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) };
-      const result = await productCollection.findOne(query);
+
+      const options = {
+        projection: {
+          toyName: 1,
+          price: 1,
+          quantity: 1,
+          pictureUrl: 1,
+          rating: 1,
+          description: 1,
+        },
+      };
+
+      const result = await productCollection.findOne(query, options);
+      res.send(result);
+    });
+
+    // addtoys
+    app.post("/addToys", async (req, res) => {
+      const addToy = req.body;
+      console.log(addToy);
+      const result = await addToyCollection.insertOne(addToy);
       res.send(result);
     });
 
