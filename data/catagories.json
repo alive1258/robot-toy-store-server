@@ -1,6 +1,78 @@
-[
-    {
-        "id":"1",
-        "name":""
-    }
-]
+
+     [
+      {
+      
+        "toyName": "RoboDog",
+        "subCategory": "RoboPets",
+        "price": 24.99,
+        "quantity": 10,
+        "pictureUrl": "https://example.com/robodog.jpg",
+        "rating": 4.5,
+        "description": "The RoboDog is a loyal and interactive robotic pet companion. It can perform tricks, respond to voice commands, and even wag its tail. Perfect for kids and dog lovers alike!"
+      },
+      {
+        
+        "toyName": "RoboCar",
+        "subCategory": "RoboRacers",
+        "price": 19.99,
+        "quantity": 15,
+        "pictureUrl": "https://example.com/robocar.jpg",
+        "rating": 4.0,
+        "description": "Get ready for high-speed racing action with the RoboCar! This sleek and fast remote-controlled car can perform amazing stunts and conquer any race track."
+      },
+      {
+       
+        "toyName": "RoboWizard Apprentice",
+        "subCategory": "RoboWizards",
+        "price": 34.99,
+        "quantity": 5,
+        "pictureUrl": "https://example.com/robowizard.jpg",
+        "rating": 4.8,
+        "description": "Become a master of magic with the RoboWizard Apprentice! This robotic wizard can cast spells, perform enchantments, and teach you the secrets of the mystical arts."
+      },
+      {
+        
+        "toyName": "RoboCompanion",
+        "subCategory": "RoboSidekicks",
+        "price": 29.99,
+        "quantity": 8,
+        "pictureUrl": "https://example.com/robocompanion.jpg",
+        "rating": 4.2,
+        "description": "The RoboCompanion is your ultimate robotic sidekick. With its friendly personality and helpful features, it will assist you in your daily tasks and keep you entertained."
+      },
+      {
+       
+        "toyName": "RoboCat",
+        "subCategory": "RoboPets",
+        "price": 21.99,
+        "quantity": 12,
+        "pictureUrl": "https://example.com/robocat.jpg",
+        "rating": 4.6,
+        "description": "The RoboCat is a robotic feline friend that purrs, plays, and responds to your touch. It's the perfect pet for those who want the joy of having a cat without the responsibilities."
+      },
+      {
+        
+        "toyName": "RoboMotorcycle",
+        "subCategory": "RoboRacers",
+        "price": 39.99,
+        "quantity": 3,
+        "pictureUrl": "https://example.com/robomotorcycle.jpg",
+        "rating": 4.3,
+        "description": "Rev up the excitement with the RoboMotorcycle! This remote-controlled motorcycle can perform daring stunts, race at high speeds, and leave your competitors in the dust."
+      },
+      {
+      
+        "toyName": "RoboMagician",
+        "subCategory": "RoboWizards",
+        "price": 49.99,
+        "quantity": 2,
+        "pictureUrl": "https://example.com/robomagician.jpg",
+        "rating": 4.9,
+        "description": "Prepare to be amazed by the RoboMagician! With its repertoire of mind-bending tricks and illusions, this robotic magician will leave you spellbound and wanting more."
+      }
+ 
+
+     
+    ]
+ 
+  
