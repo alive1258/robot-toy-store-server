@@ -25,36 +25,19 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
 
-    // const productCollection = client.db("robotToy").collection("products");
+    const productCollection = client.db("robotToy").collection("products");
     const addToyCollection = client.db("robotToy").collection("addToys");
 
     // all toy data load
-    // app.get("/products", async (req, res) => {
-    //   const cursor = productCollection.find();
-    //   const result = await cursor.toArray();
-    //   res.send(result);
-    // });
-
-    // single toy data load
-    app.get("/addToys/:id", async (req, res) => {
-      const id = req.params.id;
-      const query = { _id: new ObjectId(id) };
-
-      const options = {
-        projection: {
-          toyName: 1,
-          price: 1,
-          quantity: 1,
-          subCategory:1,
-          photo: 1,
-          rating: 1,
-          description: 1,
-        },
-      };
-
-      const result = await addToyCollection.findOne(query, options);
+    app.get("/products", async (req, res) => {
+      const cursor = productCollection.find();
+      const result = await cursor.toArray();
       res.send(result);
     });
+
+
+
+
 
     // addtoys
     app.get("/addToys", async (req,res)=>{
@@ -82,6 +65,43 @@ async function run() {
       const result = await addToyCollection.insertOne(addToy);
       res.send(result);
     });
+    // update 
+    app.put("/addToys/:id",async(req,res)=>{
+        const id =req.params.id;
+        const filter = {_id: new ObjectId(id)}
+        const options ={upsert:true};
+        const UpdateToyData=req.body;
+        const toyData={
+            $set:{
+                quantity:UpdateToyData.quantity,
+                price:UpdateToyData.price,
+                description:UpdateToyData.description
+
+            }
+        }
+        const result = await addToyCollection.updateOne(filter,toyData,options)
+        res.send(result)
+
+    })
+
+
+
+    app.get("/addToys/:id",async(req,res)=>{
+        const id=req.params.id
+        const query={_id: new ObjectId(id)}
+        const result= await addToyCollection.findOne(query)
+        res.send(result)
+
+    })
+
+       //delete
+       app.delete("/addToys/:id", async(req,res)=>{
+        const id = req.params.id;
+        console.log('delete from database',id)
+        const query={_id: new ObjectId(id)}
+        const result =await addToyCollection.deleteOne(query)
+        res.send(result)
+    })
 
  
 
