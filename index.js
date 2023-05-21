@@ -26,12 +26,22 @@ async function run() {
     // await client.connect();
 
     const productCollection = client.db("robotToy").collection("products");
-    const addToyCollection = client.db("robotToy").collection("addToys");
+    const addToyCollection = client.db("robotToy").collection("toys");
+
+
+
+    app.get("/products/:id",async(req,res)=>{
+        const id=req.params.id
+        const query={_id: new ObjectId(id)}
+        const result= await productCollection.findOne(query)
+        res.send(result)
+
+    })
 
     // all toy data load
     app.get("/products/:text", async (req, res) => {
         console.log(req.params.text)
-        if(req.params.text =="RoboPets" || req.params.text =="RoboRacers" || req.params.text =="RoboPets"){
+        if(req.params.text =="RoboPets" || req.params.text =="RoboRacers" || req.params.text =="RoboWizards"){
             
             const result = await productCollection.find({subCategory:req.params.text}).toArray();
           return  res.send(result);
@@ -43,8 +53,6 @@ async function run() {
 
         }
 
-      
-    
     });
 
 
@@ -52,7 +60,7 @@ async function run() {
 
 
     // addtoys
-    app.get("/addToys", async (req,res)=>{
+    app.get("/toys", async (req,res)=>{
         console.log(req.query.email)
         let query = {};
         if(req.query?.email){
@@ -62,7 +70,7 @@ async function run() {
         res.send(result)
     })
     // all toy data load
-    app.get("/addToys", async (req,res)=>{
+    app.get("/toys", async (req,res)=>{
      
         const cursor = addToyCollection.find()
         
@@ -71,14 +79,14 @@ async function run() {
     })
     // read
 
-    app.post("/addToys", async (req, res) => {
+    app.post("/toys", async (req, res) => {
       const addToy = req.body;
       console.log(addToy);
       const result = await addToyCollection.insertOne(addToy);
       res.send(result);
     });
     // update 
-    app.patch("/addToys/:id",async(req,res)=>{
+    app.patch("/toys/:id",async(req,res)=>{
         const id =req.params.id;
         const filter = {_id: new ObjectId(id)}
         const options ={upsert:true};
@@ -98,7 +106,7 @@ async function run() {
 
 
 
-    app.get("/addToys/:id",async(req,res)=>{
+    app.get("/toys/:id",async(req,res)=>{
         const id=req.params.id
         const query={_id: new ObjectId(id)}
         const result= await addToyCollection.findOne(query)
@@ -107,7 +115,7 @@ async function run() {
     })
 
        //delete
-       app.delete("/addToys/:id", async(req,res)=>{
+       app.delete("/toys/:id", async(req,res)=>{
         const id = req.params.id;
         console.log('delete from database',id)
         const query={_id: new ObjectId(id)}
