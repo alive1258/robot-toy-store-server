@@ -30,10 +30,12 @@ async function run() {
 
 
 
-    app.get("/products/:id",async(req,res)=>{
+    app.get("/singleProducts/:id",async(req,res)=>{
         const id=req.params.id
         const query={_id: new ObjectId(id)}
+
         const result= await productCollection.findOne(query)
+        console.log(result)
         res.send(result)
 
     })
@@ -66,15 +68,14 @@ async function run() {
         if(req.query?.email){
            query ={email: req.query.email} 
         }
-        const result =await addToyCollection.find(query).toArray();
+        const result =await addToyCollection.find(query).sort({ createdAt: 1, price: -1 }).toArray();
         res.send(result)
     })
-    // all toy data load
+    // all toy data load .limit(20)
     app.get("/toys", async (req,res)=>{
      
-        const cursor = addToyCollection.find()
-        
-        const result =await cursor.toArray();
+     
+        const result =await addToyCollection.find().limit(20).toArray();
         res.send(result)
     })
     // read
@@ -82,6 +83,7 @@ async function run() {
     app.post("/toys", async (req, res) => {
       const addToy = req.body;
       console.log(addToy);
+
       const result = await addToyCollection.insertOne(addToy);
       res.send(result);
     });
