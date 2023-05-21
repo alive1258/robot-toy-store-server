@@ -23,16 +23,28 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+    // await client.connect();
 
     const productCollection = client.db("robotToy").collection("products");
     const addToyCollection = client.db("robotToy").collection("addToys");
 
     // all toy data load
-    app.get("/products", async (req, res) => {
-      const cursor = productCollection.find();
-      const result = await cursor.toArray();
-      res.send(result);
+    app.get("/products/:text", async (req, res) => {
+        console.log(req.params.text)
+        if(req.params.text =="RoboPets" || req.params.text =="RoboRacers" || req.params.text =="RoboPets"){
+            
+            const result = await productCollection.find({subCategory:req.params.text}).toArray();
+          return  res.send(result);
+
+        }
+        else{
+            const result = await productCollection.find({}).toArray();
+          res.send(result);
+
+        }
+
+      
+    
     });
 
 
@@ -66,7 +78,7 @@ async function run() {
       res.send(result);
     });
     // update 
-    app.put("/addToys/:id",async(req,res)=>{
+    app.patch("/addToys/:id",async(req,res)=>{
         const id =req.params.id;
         const filter = {_id: new ObjectId(id)}
         const options ={upsert:true};
